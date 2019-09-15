@@ -1,4 +1,4 @@
-public class Sample{
+public class NewtonMethod{
 	public static void main(String args[]){
 		double a=Double.parseDouble(args[0]);
 		double x1=2, diff=100,x2=0;
