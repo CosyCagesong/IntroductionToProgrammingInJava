@@ -4,16 +4,17 @@ public class Checker{
 		StdDraw.setXscale(0,N);
 		StdDraw.setYscale(0,N);
 		int i,j;
-		boolean linehead=true, current;
+		StdDraw.setPenColor(StdDraw.RED);
 		for (i = 0; i < N; i++){
-			current = linehead;
-			for (j = 0; j < N; j++){
-				if (current == true) StdDraw.setPenColor(StdDraw.RED);
-				else StdDraw.setPenColor(StdDraw.BLACK);
+			for (j = i%2; j < N; j+=2){
 				StdDraw.filledSquare(j+0.5, i+0.5, 0.5);
-				current = !current;
 			}
-			linehead = !linehead;
+		}
+		StdDraw.setPenColor(StdDraw.BLACK);
+		for (i = 0; i < N; i++){
+			for (j = (i+1)%2; j < N; j+=2){
+				StdDraw.filledSquare(j+0.5, i+0.5, 0.5);
+			}
 		}
 	}
 }
