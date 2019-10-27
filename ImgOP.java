@@ -1,4 +1,4 @@
-package Tool;
+//package Tool;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,26 +7,26 @@ import java.awt.image.WritableRaster;
 
 import javax.imageio.ImageIO;
 public class ImgOP {
-	//»ñÈ¡Í¼ÏñµÄ¿í
+	//è·å–å›¾åƒçš„å®½
 	public static int getWidth(File inf){
 		BufferedImage bf = null;
 		try {
 			bf = ImageIO.read(inf);
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		WritableRaster wr = bf.getRaster();
 		int width = wr.getWidth();
 		return width;
 	}
-	//»ñÈ¡Í¼ÏñµÄ¸ß
+	//è·å–å›¾åƒçš„é«˜
 	public static int getHeight(File inf){
 		BufferedImage bf = null;
 		try {
 			bf = ImageIO.read(inf);
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		WritableRaster wr = bf.getRaster();
@@ -67,7 +67,7 @@ public class ImgOP {
 	}
 	
 	
-	//»ñÈ¡Í¼ÏñµÄ»Ò¶ÈÖµ
+	//è·å–å›¾åƒçš„ç°åº¦å€¼
 	public static int[][] getGray(File imageFilePath){
 		
 		BufferedImage bufferedImage=null;
@@ -107,7 +107,7 @@ public class ImgOP {
 	
 	
 	/**
-	 * ÌáÈ¡ÒÑÖªÍ¼ÏñµÄGreen¾ØÕó
+	 * æå–å·²çŸ¥å›¾åƒçš„GreençŸ©é˜µ
 	 */
 	
 	public static double[][] getGreen(File imageFilePath){
@@ -143,7 +143,7 @@ public class ImgOP {
 	}
 	
 	/**
-	 * ÌáÈ¡ÒÑÖªÍ¼ÏñµÄBlue¾ØÕó
+	 * æå–å·²çŸ¥å›¾åƒçš„BlueçŸ©é˜µ
 	 */
 	public static double[][] getBlue(File imageFilePath){
 		
@@ -179,7 +179,7 @@ public class ImgOP {
 	
 	
 	/**
-	 * ÌáÈ¡»º´æÍ¼ÏñµÄRed¾ØÕó£¬Êä³öÎª´æ·ÅÍ¼ÏñRed¾ØÕóµÄ¶şÎ¬Êı×é
+	 * æå–ç¼“å­˜å›¾åƒçš„RedçŸ©é˜µï¼Œè¾“å‡ºä¸ºå­˜æ”¾å›¾åƒRedçŸ©é˜µçš„äºŒç»´æ•°ç»„
 	 */
 	public static double[][] getBufferedImageRedMatrix(BufferedImage bufferedImage){
 		
@@ -200,7 +200,7 @@ public class ImgOP {
 	}
 	
 	/**
-	 * ÌáÈ¡»º´æÍ¼ÏñµÄGreen¾ØÕó£¬Êä³öÎª´æ·ÅÍ¼ÏñRed¾ØÕóµÄ¶şÎ¬Êı×é
+	 * æå–ç¼“å­˜å›¾åƒçš„GreençŸ©é˜µï¼Œè¾“å‡ºä¸ºå­˜æ”¾å›¾åƒRedçŸ©é˜µçš„äºŒç»´æ•°ç»„
 	 */
 	public static double[][] getBufferedImageGreenMatrix(BufferedImage bufferedImage){
 		
@@ -220,7 +220,7 @@ public class ImgOP {
 	}
 	
 	/**
-	 * ÌáÈ¡»º´æÍ¼ÏñµÄBlue¾ØÕó£¬Êä³öÎª´æ·ÅÍ¼ÏñRed¾ØÕóµÄ¶şÎ¬Êı×é
+	 * æå–ç¼“å­˜å›¾åƒçš„BlueçŸ©é˜µï¼Œè¾“å‡ºä¸ºå­˜æ”¾å›¾åƒRedçŸ©é˜µçš„äºŒç»´æ•°ç»„
 	 */
 	public static double[][] getBufferedImageBlueMatrix(BufferedImage bufferedImage){
 		
@@ -239,7 +239,7 @@ public class ImgOP {
 		return imageMatrix;
 		
 	}
-	//ÒÑÖªRGBÈı¸ö¶şÎ¬¾ØÕó£¬Êä³öÍ¼Ïñ
+	//å·²çŸ¥RGBä¸‰ä¸ªäºŒç»´çŸ©é˜µï¼Œè¾“å‡ºå›¾åƒ
 	public static File RGBprintImageToFile(double Red[][],double Green[][],double Blue[][],String strfilePath){
 		
 		int width=Red.length;
@@ -266,7 +266,7 @@ public class ImgOP {
 		return newImageFile;
 		
 	}
-	//ÒÑÖªÍ¼ÏñµÄµ¥Í¨µÀ»Ò¶È¾ØÕó£¬Êä³öÍ¼Ïñ
+	//å·²çŸ¥å›¾åƒçš„å•é€šé“ç°åº¦çŸ©é˜µï¼Œè¾“å‡ºå›¾åƒ
 	public static BufferedImage printBufferedImage(int matrixGray[][]){
 		
 		int width=matrixGray.length;
@@ -292,14 +292,14 @@ public class ImgOP {
 	  }
 
 	
-	//»ñÈ¡Í¼ÏñµÄÏñËØµÄÒ»Î¬Êı×é
+	//è·å–å›¾åƒçš„åƒç´ çš„ä¸€ç»´æ•°ç»„
 	public static int[] getPixels(File inf){
 		int width,height = 0;
 		BufferedImage bf = null;
 		try {
 			bf = ImageIO.read(inf);
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 		WritableRaster wr = bf.getRaster();
@@ -321,11 +321,11 @@ public class ImgOP {
 		try {
 			ImageIO.write(bf, "bmp", outfile);
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 	}
-	//½«Êı×éImg1¸³Öµ¸øImg2
+	//å°†æ•°ç»„Img1èµ‹å€¼ç»™Img2
 	public static void ImgtoImg(int[][] Img1,int[][] Img2){
 		for(int i = 0;i < Img2.length;i++){
 			for(int j = 0; j < Img2[0].length;j++){
